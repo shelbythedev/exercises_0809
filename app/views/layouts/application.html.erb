@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RubyAngularDemo</title>
+    <title>Ruby & AngularJS Demo Application</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -19,14 +19,25 @@
           <div class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <%= link_to 'Sign Out', sign_out_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
-            <% else %>
-              <%#= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary navbar-btn' %>
             <% end %>
           </div>
         </div>
       </div>
     </nav>
 
-    <%= yield %>
+    <div class="content-wrap" ng-cloak>
+      <%if notice%>
+        <div class="alert alert-success">
+          <p><%= notice %></p>
+        </div>
+      <%end%>
+      <%if alert%>
+        <div class="alert alert-danger">
+          <p><%= alert %></p>
+        </div>
+      <%end%>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
