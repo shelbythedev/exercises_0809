@@ -62,3 +62,6 @@ gem 'devise'
 
 # jQuery
 gem 'jquery-rails'
+
+# AngularJS
+gem 'angularjs-rails'

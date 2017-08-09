@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root to: "products#index"
 
+  resources :products
+
   devise_scope :user do
       resources :users
       get "signup", to: "devise/registrations#new", as: :sign_up
