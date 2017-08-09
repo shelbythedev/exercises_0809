@@ -9,6 +9,24 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to 'Ruby & Angular Demo', root_path, class: 'navbar-brand' %>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <div class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <%= link_to 'Sign Out', sign_out_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
+            <% else %>
+              <%#= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary navbar-btn' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
