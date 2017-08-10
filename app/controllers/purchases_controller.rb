@@ -5,10 +5,12 @@ class PurchasesController < ApplicationController
     if current_user.authorized
       @purchase = current_user.purchases.create(purchase_params)
       @purchase.purchase_products(params[:products])
+    else
+      status = 403
     end
 
     respond_to do |format|
-      format.json { render json: @purchase }
+      format.json { render json: @purchase, status: status }
     end
   end
 
