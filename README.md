@@ -1,24 +1,11 @@
-# README
+# Ruby on Rails & AngularJS
+##Integration Demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application demonstrates an integration strategy using AngularJS 1.10 running
+on top of Ruby on Rails 5.
 
-Things you may want to cover:
+### Synopsis
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A user who is currently logged in and authorized may select quantities of products
+and purchase those products. The system tracks purchases per user, and all models
+are fully related allowing easy aggregation of data.
