@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root to: "products#index"
 
   resources :products
+  resources :purchases
+  resources :purchased_products
 
   devise_scope :user do
       resources :users

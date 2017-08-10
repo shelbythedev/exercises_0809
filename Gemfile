@@ -65,3 +65,6 @@ gem 'jquery-rails'
 
 # AngularJS
 gem 'angularjs-rails'
+
+# for CSRF meta tag handling
+gem 'angular_rails_csrf'
