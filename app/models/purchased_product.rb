@@ -3,7 +3,7 @@ class PurchasedProduct < ApplicationRecord
   belongs_to :product
 
   def update_stock
-    self.product.stock = self.product.stock - self.quantity
-    self.product.save
+    product.stock = product.stock - quantity
+    product.save
   end
 end

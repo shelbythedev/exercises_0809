@@ -7,25 +7,26 @@ class PurchasesController < ApplicationController
 
       params[:products].each do |product|
         @purchased_product = PurchasedProduct.create({
-            product_id: product["id"],
-            purchase_id: @purchase.id,
-            quantity: product["quantity"]
-        })
+          product_id: product['id'],
+          purchase_id: @purchase.id,
+          quantity: product['quantity']
+                                                     })
 
         @purchased_product.update_stock
       end
 
-      respond_to do |format|
-        format.json {render json: @purchase}
-      end
+      response = @purchase
     else
-      respond_to do |format|
-        format.json {render json: {}, status: 403}
-      end
+      status = 403
+    end
+
+    respond_to do |format|
+      format.json { render json: response, status: status }
     end
   end
 
   private
+
   def purchase_params
     params.permit(:user_id, :products)
   end
